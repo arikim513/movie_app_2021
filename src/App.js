@@ -1,13 +1,15 @@
-import PropTypes from "prop-types";
-import PropsSample from "./Props";
+import React from "react";
+// import PropsSample from "./Props";
+import StateAndLifeCycle from "./StateAndLifeCycle";
 
-//parent component
-function App() {
-  return (
-    <div>
-      <PropsSample />
-    </div>
-  );
+class App extends React.Component {
+
+  render(){
+    return (
+      <StateAndLifeCycle />
+    );
+  }
+
 }
 
 export default App;

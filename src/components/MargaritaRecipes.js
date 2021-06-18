@@ -1,11 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
-import PropsSample from "./Props";
+import { Link } from "react-router-dom";
 import "./margaritaRecipes.css"
 
 function MargaritaRecipes({id,title,category,glass,ingredients,instruction,image}) {
     return (
         <div className="margarita_recipe">
+            <Link
+                to={{
+                    pathname: `/detail/${id}`,
+                    state: {
+                        title,
+                        category,
+                        glass,
+                        ingredients,
+                        instruction,
+                        image
+                    }
+                }}
+            >
             <img src={image} alt={title} />
             <div className="margarita_data">
                 <h3 className="margarita_title">{title}</h3>
@@ -17,6 +30,7 @@ function MargaritaRecipes({id,title,category,glass,ingredients,instruction,image
                 <p className="margarita_instruction">{instruction}</p>
                 {/* <p className="margarita_instruction">{instruction.slice(0, 180)}...</p> */}
             </div>
+            </Link>
         </div>
     )
 }
